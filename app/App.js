@@ -4,11 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Header, ThemeProvider } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
-import { View, Text, Button } from 'react-native';
-import changeNavigationBarColor, {
-  hideNavigationBar,
-  showNavigationBar,
-} from 'react-native-navigation-bar-color';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import theme from './config/theme';
 import Router from './Router';
 
