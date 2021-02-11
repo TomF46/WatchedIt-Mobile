@@ -4,18 +4,20 @@ import {
     Text,
     View
 } from 'react-native';
-import theme from '../config/theme'
 
-const Explore = () => {
+import theme from '../config/theme';
+
+const MyFilms = () => {
     return (
         <>
             <View style={theme.Body}>
                 <Text style={theme.Text}>
-                    Home
+                    My Films
                 </Text>
             </View>
         </>
     );
 };
 
-export default Explore;
+
+export default MyFilms;

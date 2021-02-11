@@ -5,11 +5,13 @@ import {
     View
 } from 'react-native';
 
+import theme from '../config/theme';
+
 const Home = () => {
     return (
         <>
-            <View style={styles.container}>
-                <Text style={styles.title}>
+            <View style={theme.Body}>
+                <Text style={theme.Text}>
                     Home
                 </Text>
             </View>
@@ -17,18 +19,5 @@ const Home = () => {
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    title: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    }
-});
 
 export default Home;
