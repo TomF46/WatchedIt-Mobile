@@ -20,6 +20,10 @@ const theme = {
         inactiveTintColor: '#bbb',
         borderTopColor: "transparent"
     },
+    Container: {
+        backgroundColor: colors.background,
+        flex: 1,
+    },
     Body: {
         backgroundColor: colors.background,
         flex: 1,
