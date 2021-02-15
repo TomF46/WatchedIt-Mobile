@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import theme from './config/theme';
 
 import HomeStackScreen from './views/HomeStackScreen';
-import Explore from './views/Explore';
+import ExploreStackScreen from './views/ExploreStackScreen';
 import MyFilms from './views/MyFilms';
 import Profile from './views/Profile';
 
@@ -47,7 +47,7 @@ const Router = () => {
             }}
         >
             <Tab.Screen name="Home" component={HomeStackScreen} />
-            <Tab.Screen name="Explore" component={Explore} />
+            <Tab.Screen name="Explore" component={ExploreStackScreen} />
             <Tab.Screen name="My Films" component={MyFilms} />
             <Tab.Screen name="Profile" component={Profile} />
 
