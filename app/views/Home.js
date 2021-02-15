@@ -11,7 +11,7 @@ import { HomePageData } from '../data/filmData';
 const Home = ({ navigation }) => {
     return (
         <>
-            <View style={theme.Body}>
+            <View style={theme.Content}>
                 <SectionList
                     sections={HomePageData}
                     keyExtractor={(item, index) => item + index}

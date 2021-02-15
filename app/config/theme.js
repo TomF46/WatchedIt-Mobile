@@ -2,9 +2,12 @@ const colors = {
     background: '#1F2833',
     primary: '#353D47',
     offWhite: '#eee',
+    secondary: '#66e2fc',
+    black: '#000'
 }
 
 const theme = {
+    Colors: colors,
     StatusBar: {
         backgroundColor: colors.primary
     },
@@ -16,7 +19,7 @@ const theme = {
     },
     Tabs: {
         backgroundColor: colors.primary,
-        activeTintColor: colors.offWhite,
+        activeTintColor: colors.secondary,
         inactiveTintColor: '#bbb',
         borderTopColor: "transparent"
     },
@@ -27,7 +30,12 @@ const theme = {
     Body: {
         backgroundColor: colors.background,
         flex: 1,
+        border: 0
+    },
+    Content: {
+        backgroundColor: colors.background,
         padding: 10,
+        flex: 1,
         border: 0
     },
     Text: {
@@ -40,6 +48,21 @@ const theme = {
     ListItem: {
         backgroundColor: colors.primary,
         color: colors.offWhite
+    },
+    FilmDetail: {
+        Title: {
+            color: colors.offWhite,
+            fontSize: 18,
+        },
+        Text: {
+            color: colors.offWhite,
+            fontSize: 14
+        },
+        ActionButton: {
+            backgroundColor: colors.secondary,
+            color: '#000',
+            marginVertical: 20
+        }
     }
 }
 

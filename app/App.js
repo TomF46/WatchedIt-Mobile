@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Header, ThemeProvider } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
@@ -25,7 +25,7 @@ function App() {
       <SafeAreaProvider>
         <ThemeProvider theme={theme}>
           <Header
-            centerComponent={{ text: 'WatchedIT', style: { color: '#fff' } }}
+            centerComponent={{ text: 'WatchedIT', style: { color: '#fff', fontSize: 24 } }}
             containerStyle={theme.Header}
           />
           <NavigationContainer>
