@@ -63,6 +63,14 @@ const theme = {
             color: '#000',
             marginVertical: 20
         }
+    },
+    MyFilms: {
+        Title: {
+            color: colors.offWhite,
+            fontSize: 24,
+            textAlign: 'center'
+
+        }
     }
 }
 

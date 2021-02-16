@@ -4,7 +4,7 @@ import theme from './config/theme';
 
 import HomeStackScreen from './views/HomeStackScreen';
 import ExploreStackScreen from './views/ExploreStackScreen';
-import MyFilms from './views/MyFilms';
+import MyFilmsStackScreen from './views/MyFilmsStackScreen';
 import Profile from './views/Profile';
 
 
@@ -48,8 +48,8 @@ const Router = () => {
         >
             <Tab.Screen name="Home" component={HomeStackScreen} />
             <Tab.Screen name="Explore" component={ExploreStackScreen} />
-            <Tab.Screen name="My Films" component={MyFilms} />
-            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="My Films" component={MyFilmsStackScreen} />
+            {/* <Tab.Screen name="Profile" component={Profile} /> */}
 
         </Tab.Navigator>
     )

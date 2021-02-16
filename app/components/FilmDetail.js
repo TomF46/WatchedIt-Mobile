@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from "react-redux";
 import { useState } from 'react';
 import {
     Text,
@@ -7,15 +8,21 @@ import {
 } from 'react-native';
 import { Image, BottomSheet, ListItem, Button, Icon } from 'react-native-elements';
 import theme from '../config/theme';
+import { addWatchedFilm, removeWatchedFilm } from '../redux/actions/watchedFilmsActions'
+import { saveState } from '../tools/localStorage';
 
 
-const FilmDetail = ({ film }) => {
+const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, isWatched, state }) => {
     let width = Dimensions.get('window').width;
     const [isVisible, setIsVisible] = useState(false);
     const list = [
         {
-            title: 'Set watched',
-            onPress: () => alert("Functionality to be added"),
+            title: isWatched ? "Set unwatched" : "Set watched",
+            onPress: () => {
+                isWatched ? removeWatchedFilm(film.id) : addWatchedFilm(film.id)
+                saveState(state);
+                setIsVisible(false);
+            },
         },
         {
             title: 'Cancel',
@@ -24,6 +31,11 @@ const FilmDetail = ({ film }) => {
             onPress: () => setIsVisible(false),
         },
     ];
+
+    const setFilmWatched = () => {
+        addWatchedFilm(film.id)
+    }
+
 
     return (
         <>
@@ -77,6 +89,20 @@ const FilmDetail = ({ film }) => {
     );
 };
 
+const mapDispatchToProps = {
+    addWatchedFilm,
+    removeWatchedFilm
+};
+
+const mapStateToProps = (state, ownProps) => {
+    let watchedFilms = state.watchedFilms;
+    let isWatched = watchedFilms.some(watchedFilm => watchedFilm.id === ownProps.film.id);
+    return {
+        watchedFilms,
+        isWatched,
+        state
+    };
+};
 
 
-export default FilmDetail;
+export default connect(mapStateToProps, mapDispatchToProps)(FilmDetail);
