@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import {
     Text,
-    View
+    ScrollView
 } from 'react-native';
 import { AllFilmsData } from '../data/filmData';
 import theme from '../config/theme';
@@ -20,7 +20,7 @@ const ViewFilm = ({ route }) => {
 
     return (
         <>
-            <View style={theme.Body}>
+            <ScrollView style={theme.Body}>
                 {film == null ? (
                     <Text style={theme.Text}>
                         Loading film...
@@ -31,7 +31,7 @@ const ViewFilm = ({ route }) => {
                         </>
                     )}
 
-            </View>
+            </ScrollView>
         </>
     );
 };

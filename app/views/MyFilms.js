@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import {
-    StyleSheet,
-    Text,
-    View
+    ScrollView
 } from 'react-native';
 
 
@@ -13,7 +11,7 @@ import FilmListItem from '../components/FilmListItem';
 const MyFilms = ({ watchedFilms }) => {
     return (
         <>
-            <View style={theme.Content}>
+            <ScrollView style={theme.Content}>
                 {watchedFilms != null && (
                     watchedFilms.map((film, i) => {
                         return (
@@ -21,7 +19,7 @@ const MyFilms = ({ watchedFilms }) => {
                         )
                     })
                 )}
-            </View>
+            </ScrollView>
         </>
     );
 };
