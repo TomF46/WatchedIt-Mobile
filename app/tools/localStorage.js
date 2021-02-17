@@ -14,8 +14,6 @@ export const loadState = async () => {
 export const saveState = async (state) => {
     try {
         const jsonValue = JSON.stringify(state)
-        console.log("saved");
-        console.log(jsonValue);
         await AsyncStorage.setItem('@state', jsonValue)
     } catch (e) {
         console.log(e);

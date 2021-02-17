@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Text,
     View,
@@ -12,7 +12,7 @@ import { addWatchedFilm, removeWatchedFilm } from '../redux/actions/watchedFilms
 import { saveState } from '../tools/localStorage';
 
 
-const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, isWatched, state }) => {
+const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isWatched, state }) => {
     let width = Dimensions.get('window').width;
     const [isVisible, setIsVisible] = useState(false);
     const list = [
@@ -20,7 +20,6 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, isWatched, state 
             title: isWatched ? "Set unwatched" : "Set watched",
             onPress: () => {
                 isWatched ? removeWatchedFilm(film.id) : addWatchedFilm(film.id)
-                saveState(state);
                 setIsVisible(false);
             },
         },
@@ -31,6 +30,10 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, isWatched, state 
             onPress: () => setIsVisible(false),
         },
     ];
+
+    useEffect(() => {
+        saveState(state);
+    }, [watchedFilms]);
 
     const setFilmWatched = () => {
         addWatchedFilm(film.id)
