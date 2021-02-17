@@ -48,7 +48,8 @@ const theme = {
     },
     TextHeading: {
         color: colors.offWhite,
-        fontSize: 32
+        fontSize: 32,
+        paddingVertical: 4
     },
     ListItem: {
         backgroundColor: colors.primary,
@@ -95,6 +96,21 @@ const theme = {
             fontSize: 22,
             textAlign: 'center',
             paddingVertical: 4
+        }
+    },
+    DetailedListItem: {
+        Container: {
+            backgroundColor: colors.primary,
+            marginVertical: 10,
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+            padding: 8
         }
     }
 }

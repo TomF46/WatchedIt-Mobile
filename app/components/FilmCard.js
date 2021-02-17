@@ -7,7 +7,7 @@ import {
     Dimensions,
     TouchableOpacity
 } from 'react-native';
-import { Card, ListItem, Button, Icon, Divider } from 'react-native-elements'
+import { Divider } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native';
 
 const FilmCard = ({ film }) => {
