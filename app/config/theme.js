@@ -38,6 +38,11 @@ const theme = {
         flex: 1,
         border: 0
     },
+    ContentNoBackground: {
+        padding: 10,
+        flex: 1,
+        border: 0
+    },
     Text: {
         color: colors.offWhite
     },
@@ -70,6 +75,26 @@ const theme = {
             fontSize: 24,
             textAlign: 'center'
 
+        }
+    },
+    Card: {
+        Container: {
+            backgroundColor: colors.primary,
+            marginVertical: 10,
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+        },
+        Title: {
+            color: colors.offWhite,
+            fontSize: 22,
+            textAlign: 'center',
+            paddingVertical: 4
         }
     }
 }
