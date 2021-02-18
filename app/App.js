@@ -22,7 +22,7 @@ function App() {
     }
     createStore()
     setNavigationColor('#353D47');
-    SplashScreen.hide();
+    setTimeout(() => SplashScreen.hide(), 1000);
   }, []);
 
   const setNavigationColor = color => {
