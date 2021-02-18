@@ -17,6 +17,12 @@ const theme = {
         border: 0,
         borderBottomWidth: 0,
     },
+    Toast: {
+        backgroundColor: colors.secondary,
+        paddingTop: 4,
+        paddingBottom: 4,
+        with: 400
+    },
     Tabs: {
         backgroundColor: colors.primary,
         activeTintColor: colors.secondary,
@@ -56,6 +62,15 @@ const theme = {
         color: colors.offWhite
     },
     FilmDetail: {
+        ControlsContainer: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 8,
+            borderTopWidth: 1,
+            borderBottomWidth: 1,
+            borderColor: colors.primary
+        },
         Title: {
             color: colors.offWhite,
             fontSize: 18,
@@ -112,6 +127,15 @@ const theme = {
             elevation: 5,
             padding: 8
         }
+    },
+    Fab: {
+        position: 'absolute',
+        bottom: 10,
+        right: 10,
+    },
+    Relative: {
+        flex: 1,
+        position: 'relative'
     }
 }
 

@@ -3,45 +3,50 @@ import { connect } from "react-redux";
 import { useState, useEffect } from 'react';
 import {
     Text,
+    ScrollView,
     View,
-    Dimensions
+    Dimensions,
+    TouchableOpacity
 } from 'react-native';
-import { Image, BottomSheet, ListItem, Button, Icon } from 'react-native-elements';
+import { Image, Icon } from 'react-native-elements';
 import theme from '../config/theme';
 import { addWatchedFilm, removeWatchedFilm } from '../redux/actions/watchedFilmsActions'
 import { saveState } from '../tools/localStorage';
+import Toast from 'react-native-toast-native';
 
 
 const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isWatched, state }) => {
     let width = Dimensions.get('window').width;
     const [isVisible, setIsVisible] = useState(false);
-    const list = [
-        {
-            title: isWatched ? "Set unwatched" : "Set watched",
-            onPress: () => {
-                isWatched ? removeWatchedFilm(film.id) : addWatchedFilm(film.id)
-                setIsVisible(false);
-            },
-        },
-        {
-            title: 'Cancel',
-            containerStyle: { backgroundColor: 'red' },
-            titleStyle: { color: 'white' },
-            onPress: () => setIsVisible(false),
-        },
-    ];
+    // const list = [
+    //     {
+    //         title: isWatched ? "Set unwatched" : "Set watched",
+    //         onPress: () => {
+    //             isWatched ? removeWatchedFilm(film.id) : addWatchedFilm(film.id)
+    //             setIsVisible(false);
+    //         },
+    //     },
+    //     {
+    //         title: 'Cancel',
+    //         containerStyle: { backgroundColor: 'red' },
+    //         titleStyle: { color: 'white' },
+    //         onPress: () => setIsVisible(false),
+    //     },
+    // ];
 
     useEffect(() => {
         saveState(state);
     }, [watchedFilms]);
 
-    const setFilmWatched = () => {
-        addWatchedFilm(film.id)
+    const toggleFilmWatched = () => {
+        isWatched ? removeWatchedFilm(film.id) : addWatchedFilm(film.id)
+        let toastText = isWatched ? "Film removed from watched list" : "Film added to watched list"
+        Toast.show(toastText, Toast.SHORT, Toast.BOTTOM, theme.Toast);
     }
 
 
     return (
-        <>
+        <ScrollView style={theme.Relative}>
             <View>
                 <Image
                     source={{ uri: film.headerImage }}
@@ -65,17 +70,34 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isW
                     </View>
                 </View>
             </View>
+            <View style={theme.FilmDetail.ControlsContainer}>
+                <TouchableOpacity onPress={() => toggleFilmWatched()}>
+                    <Icon
+                        name={isWatched ? 'eye-slash' : 'eye'}
+                        type='font-awesome'
+                        color={theme.Colors.secondary}
+                        size={46} />
+                </TouchableOpacity>
+            </View>
             <View style={theme.Content}>
                 <View style={{ flex: 1 }}>
                     <Text style={theme.FilmDetail.Text}>{`Description: ${film.description}`}</Text>
-                    <Button
+                    {/* <Button
                         title="Actions"
                         color={theme.Colors.black}
                         buttonStyle={theme.FilmDetail.ActionButton}
                         onPress={() => setIsVisible(true)}
-                    />
+                    /> */}
                 </View>
             </View>
+            {/* <Icon
+                raised
+                reverse
+                name='plus'
+                type='font-awesome'
+                containerStyle={theme.Fab}
+                color={theme.Colors.secondary}
+                onPress={() => console.log('hello')} />
             <BottomSheet
                 isVisible={isVisible}
                 containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}
@@ -87,8 +109,8 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isW
                         </ListItem.Content>
                     </ListItem>
                 ))}
-            </BottomSheet>
-        </>
+            </BottomSheet> */}
+        </ScrollView>
     );
 };
 
