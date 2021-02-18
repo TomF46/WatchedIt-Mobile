@@ -38,7 +38,7 @@ function App() {
           <SafeAreaProvider>
             <ThemeProvider theme={theme}>
               <Header
-                centerComponent={{ text: 'WatchedIT', style: { color: '#fff', fontSize: 24 } }}
+                centerComponent={{ text: 'WatchedIT', style: { color: theme.Colors.secondary, fontSize: 24 } }}
                 containerStyle={theme.Header}
               />
               <NavigationContainer>

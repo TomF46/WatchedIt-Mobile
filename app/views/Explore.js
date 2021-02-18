@@ -16,7 +16,7 @@ const Explore = () => {
 
     updateSearch = (userSearchTerm) => {
         setSearchTerm(userSearchTerm);
-        let results = search(AllFilmsData, ['title'], userSearchTerm);
+        let results = search(AllFilmsData, ['title', 'director'], userSearchTerm);
         setSearchResults(results);
     };
 

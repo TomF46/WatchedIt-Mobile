@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import {
     Text,
     ScrollView,
@@ -13,26 +13,12 @@ import theme from '../config/theme';
 import { addWatchedFilm, removeWatchedFilm } from '../redux/actions/watchedFilmsActions'
 import { saveState } from '../tools/localStorage';
 import Toast from 'react-native-toast-native';
+import { useNavigation } from '@react-navigation/native';
 
 
 const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isWatched, state }) => {
     let width = Dimensions.get('window').width;
-    const [isVisible, setIsVisible] = useState(false);
-    // const list = [
-    //     {
-    //         title: isWatched ? "Set unwatched" : "Set watched",
-    //         onPress: () => {
-    //             isWatched ? removeWatchedFilm(film.id) : addWatchedFilm(film.id)
-    //             setIsVisible(false);
-    //         },
-    //     },
-    //     {
-    //         title: 'Cancel',
-    //         containerStyle: { backgroundColor: 'red' },
-    //         titleStyle: { color: 'white' },
-    //         onPress: () => setIsVisible(false),
-    //     },
-    // ];
+    const navigation = useNavigation();
 
     useEffect(() => {
         saveState(state);
@@ -47,6 +33,15 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isW
 
     return (
         <ScrollView style={theme.Relative}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+                <View style={theme.FilmDetail.BackContainer}>
+                    <Icon
+                        name='long-arrow-left'
+                        type='font-awesome'
+                        color={theme.Colors.primary}
+                        size={26} />
+                </View>
+            </TouchableOpacity>
             <View>
                 <Image
                     source={{ uri: film.headerImage }}
@@ -82,34 +77,8 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isW
             <View style={theme.Content}>
                 <View style={{ flex: 1 }}>
                     <Text style={theme.FilmDetail.Text}>{`Description: ${film.description}`}</Text>
-                    {/* <Button
-                        title="Actions"
-                        color={theme.Colors.black}
-                        buttonStyle={theme.FilmDetail.ActionButton}
-                        onPress={() => setIsVisible(true)}
-                    /> */}
                 </View>
             </View>
-            {/* <Icon
-                raised
-                reverse
-                name='plus'
-                type='font-awesome'
-                containerStyle={theme.Fab}
-                color={theme.Colors.secondary}
-                onPress={() => console.log('hello')} />
-            <BottomSheet
-                isVisible={isVisible}
-                containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}
-            >
-                {list.map((l, i) => (
-                    <ListItem key={i} containerStyle={l.containerStyle} onPress={l.onPress}>
-                        <ListItem.Content>
-                            <ListItem.Title style={l.titleStyle}>{l.title}</ListItem.Title>
-                        </ListItem.Content>
-                    </ListItem>
-                ))}
-            </BottomSheet> */}
         </ScrollView>
     );
 };

@@ -71,6 +71,11 @@ const theme = {
             borderBottomWidth: 1,
             borderColor: colors.primary
         },
+        BackContainer: {
+            padding: 4,
+            alignItems: 'flex-start',
+            backgroundColor: colors.secondary
+        },
         Title: {
             color: colors.offWhite,
             fontSize: 18,
