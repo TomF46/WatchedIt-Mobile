@@ -9,6 +9,7 @@ import theme from './config/theme';
 import Router from './Router';
 import { storeCreate } from './redux/store'
 import { Provider as ReduxProvider } from "react-redux";
+import SplashScreen from 'react-native-splash-screen';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     }
     createStore()
     setNavigationColor('#353D47');
+    SplashScreen.hide();
   }, []);
 
   const setNavigationColor = color => {
