@@ -23,6 +23,7 @@ If you have not done this before [this article](https://www.androidauthority.com
 #### Home
 
 ![WatchedIt Home Screen](https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/Home.jpg)
+<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/Home.jpg" width="48" alt="WatchedIt Home Screen">
 
 View recommended and top rated films they can be viewed.
 
