@@ -4,12 +4,9 @@ import {
     Text,
     View,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import FilmCard from './FilmCard';
 
 const HomepageDisplaySection = ({ section }) => {
-    const navigation = useNavigation();
-
     return (
         <View>
             <Text style={theme.TextHeading}>{section.title}</Text>

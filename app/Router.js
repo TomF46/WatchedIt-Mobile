@@ -1,14 +1,9 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import theme from './config/theme';
-
 import HomeStackScreen from './views/HomeStackScreen';
 import ExploreStackScreen from './views/ExploreStackScreen';
 import MyFilmsStackScreen from './views/MyFilmsStackScreen';
-import Profile from './views/Profile';
-
-
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Router = () => {
@@ -27,10 +22,7 @@ const Router = () => {
                     }
                     else if (route.name === 'My Films') {
                         iconName = 'videocam-outline';
-                    }
-                    else if (route.name === 'Profile') {
-                        iconName = 'person-outline';
-                    }
+                    };
 
 
                     return <Icon name={iconName} size={size} color={color} />;
@@ -49,7 +41,6 @@ const Router = () => {
             <Tab.Screen name="Home" component={HomeStackScreen} />
             <Tab.Screen name="Explore" component={ExploreStackScreen} />
             <Tab.Screen name="My Films" component={MyFilmsStackScreen} />
-            {/* <Tab.Screen name="Profile" component={Profile} /> */}
 
         </Tab.Navigator>
     )

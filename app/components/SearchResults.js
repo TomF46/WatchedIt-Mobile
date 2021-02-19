@@ -1,6 +1,4 @@
 import React from 'react';
-import theme from '../config/theme';
-import { useNavigation } from '@react-navigation/native';
 import FilmListItem from './FilmListItem';
 
 const SearchResults = ({ results }) => {

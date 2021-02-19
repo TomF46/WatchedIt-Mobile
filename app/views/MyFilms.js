@@ -4,10 +4,7 @@ import {
     Text,
     ScrollView
 } from 'react-native';
-
-
 import theme from '../config/theme';
-import FilmListItem from '../components/FilmListItem';
 import DetailedFilmListItem from '../components/DetailedFilmListItem';
 
 const MyFilms = ({ watchedFilms }) => {
@@ -18,7 +15,6 @@ const MyFilms = ({ watchedFilms }) => {
                 {watchedFilms != null && (
                     watchedFilms.map((film, i) => {
                         return (
-                            // <FilmListItem key={i} film={film} />
                             <DetailedFilmListItem key={i} film={film} />
                         )
                     })
