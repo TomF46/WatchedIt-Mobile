@@ -54,6 +54,7 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isW
                         <Text style={theme.FilmDetail.Title}>{film.title}</Text>
                         <Text style={theme.FilmDetail.Text}>Director: {film.director}</Text>
                         <Text style={theme.FilmDetail.Text}>Release year: {film.releaseDate}</Text>
+                        <Text style={theme.FilmDetail.Text}>Genere: {film.genres[0]}</Text>
                         <Text style={theme.FilmDetail.Text}>{`${film.rating} / 10`}</Text>
                     </View>
                     <View style={{ flex: 0.75 }}>
@@ -76,7 +77,28 @@ const FilmDetail = ({ film, addWatchedFilm, removeWatchedFilm, watchedFilms, isW
             </View>
             <View style={theme.Content}>
                 <View style={{ flex: 1 }}>
-                    <Text style={theme.FilmDetail.Text}>{`Description: ${film.description}`}</Text>
+                    <Text style={theme.FilmDetail.TextSubHeading}>Description:</Text>
+                    <Text style={theme.FilmDetail.Text}>{film.description}</Text>
+                </View>
+            </View>
+            <View style={theme.Content}>
+                <View style={{ flex: 1 }}>
+                    <Text style={theme.FilmDetail.TextSubHeading}>Genres</Text>
+                    {film.genres.map((genre, i) => {
+                        return (
+                            <Text key={i} style={theme.FilmDetail.Text}>{genre}</Text>
+                        )
+                    })}
+                </View>
+            </View>
+            <View style={theme.Content}>
+                <View style={{ flex: 1 }}>
+                    <Text style={theme.FilmDetail.TextSubHeading}>Starring:</Text>
+                    {film.starring.map((actor, i) => {
+                        return (
+                            <Text key={i} style={theme.FilmDetail.Text}>{actor}</Text>
+                        )
+                    })}
                 </View>
             </View>
         </ScrollView>

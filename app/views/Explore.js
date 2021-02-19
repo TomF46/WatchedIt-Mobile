@@ -15,7 +15,7 @@ const Explore = () => {
 
     updateSearch = (userSearchTerm) => {
         setSearchTerm(userSearchTerm);
-        let results = search(AllFilmsData, ['title', 'director'], userSearchTerm);
+        let results = search(AllFilmsData, ['title', 'director', 'genres', 'starring'], userSearchTerm);
         setSearchResults(results);
     };
 
@@ -23,7 +23,7 @@ const Explore = () => {
         <>
             <ScrollView style={theme.Content}>
                 <SearchBar
-                    placeholder="Search..."
+                    placeholder="Title, Director, Actor, Genre"
                     onChangeText={updateSearch}
                     value={searchTerm}
                 />

@@ -84,6 +84,10 @@ const theme = {
             color: colors.offWhite,
             fontSize: 14
         },
+        TextSubHeading: {
+            color: colors.secondary,
+            fontSize: 14
+        },
         ActionButton: {
             backgroundColor: colors.secondary,
             color: '#000',
