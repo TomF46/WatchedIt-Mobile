@@ -1,4 +1,4 @@
-![WatchedIt App Icon](https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/splash_icon.png)
+![WatchedIt App Icon](https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/splash_icon.png)
 
 ## WatchedIT
 
@@ -12,7 +12,7 @@ The purpose of this application is to learn React Native and how it compares to 
 
 Currently this application is only available for download on Android devices though an APK
 
-You can download a signed APK from here [APK Download](https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/app-release.apk).
+You can download a signed APK from here [APK Download](https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/app-release.apk).
 
 If you have not done this before [this article](https://www.androidauthority.com/how-to-install-apks-31494/) will guide you through the process.
 
@@ -22,7 +22,7 @@ If you have not done this before [this article](https://www.androidauthority.com
 
 #### Home
 
-<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/Home.jpg" width="400" alt="WatchedIt Home Screen">
+<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/Home.jpg" width="400" alt="WatchedIt Home Screen">
 
 View recommended and top rated films they can be viewed.
 
@@ -30,7 +30,7 @@ View recommended and top rated films they can be viewed.
 
 #### View Film
 
-<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/ViewFilm.jpg" width="400" alt="WatchedIt Film Detail">
+<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/ViewFilm.jpg" width="400" alt="WatchedIt Film Detail">
 
 View all the details about a single film such as , release date, rating, genre, actors, and a description. You can also toggle the prominent watched/seen button to add it to the users seen list.
 
@@ -38,18 +38,18 @@ View all the details about a single film such as , release date, rating, genre, 
 
 #### Explore
 
-<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/Explore.jpg" width="400" alt="WatchedIt Explore">
+<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/Explore.jpg" width="400" alt="WatchedIt Explore">
 
 Text search the whole collection of films by title, director, genre, or actors in it.
 
 e.g. From our dataset searching 'Francis Ford' for the director 'Francis Ford Coppola' only returns films he has directed.
 
-<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/ExploreSearching.jpg" width="400" alt="WatchedIt Explore Searching">
+<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/ExploreSearching.jpg" width="400" alt="WatchedIt Explore Searching">
 
 ---
 
 #### My Films
 
-<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/MyFilms.jpg" width="400" alt="WatchedIt My Films">
+<img src="https://personal-website-images-tom.s3-eu-west-1.amazonaws.com/WatchedIt/MyFilms.jpg" width="400" alt="WatchedIt My Films">
 
 View a list of all of the films added to the users watched list.
